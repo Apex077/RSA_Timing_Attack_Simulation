@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSA Timing Attack Demonstration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1>RSA Timing Attack Demonstration</h1>
+
+    <div id="network-container">
+        <!-- Line connecting Sender and Receiver -->
+        <div id="connection-line"></div>
+        <!-- Line connecting Sender and Attacker -->
+        <div id="interception-line"></div>
+
+        <div class="computer-container" id="sender">
+            <div class="computer-icon"></div>
+            <div class="computer-title">Sender</div>
+            <input type="text" id="messageInput" class="message-input" placeholder="Enter your message here" />
+            <button class="attack-button" id="sendButton" onclick="startSimulation()">Send Message</button>
+        </div>
+
+        <div class="computer-container" id="attacker">
+            <div class="computer-icon"></div>
+            <div class="computer-title">Attacker</div>
+            <input type="number" id="attemptCountInput" class="attempt-input" placeholder="Number of attempts" min="1"
+                value="50" />
+            <div class="timing-bar" id="timingBar"></div>
+            <div class="timing-display" id="timingDisplay">Timing: 0 ms</div>
+            <div class="attempt-display" id="attemptDisplay">Attempt: 0 of 50</div>
+        </div>
+
+        <div class="computer-container" id="receiver">
+            <div class="computer-icon"></div>
+            <div class="computer-title">Receiver</div>
+            <div id="receivedMessage"></div>
+        </div>
+    </div>
+
+    <div id="animationBox">
+        <!-- For animated message bubbles -->
+    </div>
+
+    <div id="timingChartContainer">
+        <canvas id="timingChart"></canvas>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/forge/0.10.0/forge.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
